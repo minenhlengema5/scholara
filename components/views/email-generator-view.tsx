@@ -105,7 +105,7 @@ export function EmailGeneratorView() {
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="grid gap-2">
               <Label htmlFor="tone">Tone</Label>
-              <Select value={tone} onValueChange={setTone}>
+              <Select value={tone} onValueChange={(v) => setTone(v ?? "formal")}>
                 <SelectTrigger id="tone">
                   <SelectValue />
                 </SelectTrigger>
@@ -118,7 +118,7 @@ export function EmailGeneratorView() {
             </div>
             <div className="grid gap-2">
               <Label htmlFor="audience">Audience</Label>
-              <Select value={audience} onValueChange={setAudience}>
+              <Select value={audience} onValueChange={(v) => setAudience(v ?? "client")}>
                 <SelectTrigger id="audience">
                   <SelectValue />
                 </SelectTrigger>

@@ -22,7 +22,7 @@ export async function POST(req: Request) {
       "If a question is outside a professional/workplace context, gently steer back.",
       "Remind users to verify important information and never share confidential data when relevant.",
     ].join(" "),
-    messages: convertToModelMessages(messages),
+    messages: await convertToModelMessages(messages),
   })
 
   return result.toUIMessageStreamResponse()
